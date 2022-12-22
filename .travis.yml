@@ -22,12 +22,12 @@ script:
   # Tagging
   - docker tag udagram-api-feed manalrashwan/udagram-api-feed:v1b
   - docker tag udagram-api-user manalrashwan/udagram-api-user:v1b
-  - docker tag udagram-frontend manalrashwan/udagram-frontend:v1c
+  - docker tag udagram-frontend manalrashwan/udagram-frontend:v1d
   - docker tag udagram-reverseproxy manalrashwan/reverseproxy:v1b
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push manalrashwan/udagram-api-feed:v1b
   - docker push manalrashwan/udagram-api-user:v1b
-  - docker push manalrashwan/udagram-frontend:v1c
+  - docker push manalrashwan/udagram-frontend:v1d
   - docker push manalrashwan/reverseproxy:v1b
